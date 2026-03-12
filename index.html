@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KrishiSeva | FPO Digital Marketing Platform</title>
+    <title>FarmConnect | Digital Aggregation Platform</title>
     <!-- Meta tags for SEO -->
     <meta name="description"
-        content="A professional digital marketing platform connecting Farmers, FPOs, and Buyers directly.">
+        content="Digital Aggregation Platform for Farmers and FPOs to manage produce, logistics, and bulk markets.">
     <!-- Favicon placeholder (can be swapped for actual) -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2829/2829759.png">
     <link rel="stylesheet" href="style.css">
@@ -23,15 +23,22 @@
                     d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 4C14.76 4 17 6.24 17 9C17 10.42 15.17 13.43 12 17.5C8.83 13.43 7 10.42 7 9C7 6.24 9.24 4 12 4ZM12 11C13.1 11 14 10.1 14 9C14 7.9 13.1 7 12 7C10.9 7 10 7.9 10 9C10 10.1 10.9 11 12 11Z"
                     fill="#1b4332" />
             </svg>
-            <span>KrishiSeva</span>
+            <span>FarmConnect</span>
         </div>
         <ul class="nav-links" id="main-nav">
             <li><a class="nav-link active" data-view="marketplace">Marketplace</a></li>
-            <li><a class="nav-link" data-view="price-history">Market Prices</a></li>
-            <li><a class="nav-link" data-view="schemes">Govt Schemes</a></li>
-            <li><a class="nav-link" data-view="network">Farmer Network</a></li>
+            <li><a class="nav-link" data-view="aggregation">Aggregation</a></li>
+            <li><a class="nav-link" data-view="logistics">Logistics</a></li>
+            <li><a class="nav-link" data-view="training">Skills</a></li>
+            <li><a class="nav-link" data-view="registration">Farmer Reg</a></li>
         </ul>
         <div id="user-info" style="display: flex; gap: 1rem; align-items: center;">
+            <select id="lang-selector" class="lang-select" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                <option value="hi">हिन्दी (Hindi)</option>
+                <option value="te">తెలుగు (Telugu)</option>
+            </select>
             <button class="btn-login" id="login-nav-btn">Sign In</button>
         </div>
     </nav>
@@ -46,6 +53,16 @@
         <p>© 2026 KrishiSeva FPO Platform. Strengthening Farmer-to-Buyer Connections.</p>
     </footer>
 
+    <!-- Configuration (Ignored by Git) -->
+    <script src="config.js"></script>
+    <script>
+        // Dynamically load Google Maps using the key from config.js
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${CONFIG.GOOGLE_MAPS_API_KEY}`;
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+    </script>
     <!-- Application Script -->
     <script src="app.js"></script>
 </body>
